@@ -1,0 +1,16 @@
+# Maps the folder "pipeline" on host machine to folder "app/pipeline" on a docker container
+docker run -it --entrypoint=bash -v $(pwd)/pipeline:/app/pipeline python:3.13.11-slim
+##############################
+
+# Delete containers
+docker rm $(docker ps -aq)
+##############################
+
+# To pass arguments from container-bash to script use sys.argv
+# script.py
+import sys
+print('arguments', sys.argv)
+
+root@60c7b843120e:/# python script.py 1 3 3 
+['///script.py', '1', '3', '3']
+##############################
