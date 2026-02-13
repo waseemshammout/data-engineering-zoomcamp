@@ -13,4 +13,12 @@ print('arguments', sys.argv)
 
 root@60c7b843120e:/# python script.py 1 3 3 
 ['///script.py', '1', '3', '3']
-##############################
+########################################################################################################################
+
+UV and virtual environment:
+
+1. pip install uv                      # on host
+2. uv init --python 3.13               # Inside the folder you want the virtual environment to be created
+3. uv run python -V                    # Creates the .venv folder and check python version on the virtual environment
+4. uv run which python                 # Use this to track which interpreter you are using
+5. uv add [library name]               # To extend the library from host python to virtual environment python

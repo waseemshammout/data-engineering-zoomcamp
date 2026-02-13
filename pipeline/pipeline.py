@@ -1,6 +1,16 @@
 import sys
-import pandas
-print('arguments', sys.argv)
+import pandas as pd
 
+month = int(sys.argv[1])
 
-# print("Rahaf")
+df = pd.DataFrame(
+    {
+        'day': [1,2],
+        'num_pass': [5,6],
+    }
+)
+
+df['month'] = month
+
+df.to_parquet(f'output_{month}.parquet')
+print('Parquet File created!')
